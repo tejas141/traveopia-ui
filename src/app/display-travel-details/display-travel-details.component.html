@@ -1,0 +1,20 @@
+<button class="back-button" (click)="goBack()">Back</button>
+
+<table>
+  <tr>
+    <th>Sl #</th>
+    <th>Name</th>
+    <th>Email</th>
+    <th>Destination</th>
+    <th>Number of Travellers</th>
+    <th>Total Budget</th>
+  </tr>
+  <tr *ngFor="let travel of travelDetailsList; let i = index">
+    <td>{{i+1}}</td>
+    <td>{{travel.name}}</td>
+    <td>{{travel.email}}</td>
+    <td>{{travel.destination}}</td>
+    <td>{{travel.noOfTravellers}}</td>
+    <td>{{travel.noOfTravellers * travel.budget}}</td>
+  </tr>
+</table>

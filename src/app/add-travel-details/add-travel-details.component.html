@@ -1,0 +1,34 @@
+<div id="registration-form">
+    <div class='fieldset'>
+      <legend>Travel Details</legend>
+      <form action="#" method="post" data-validate="parsley">
+        <div class='row'>
+          <label for='firstname'>Name</label>
+          <input type="text" placeholder="First Name" [(ngModel)]="travelDetails.name" name='firstname' id='firstname' data-required="true" data-error-message="Your Name is required">
+        </div>
+        <div class='row'>
+          <label for="email">E-mail</label>
+          <input type="text" placeholder="E-mail" [(ngModel)]="travelDetails.email" name='email' data-required="true" data-type="email" data-error-message="Your E-mail is required">
+        </div>
+        <div class='row'>
+          <label for="destination">Destination</label>
+          <select name="destination" placeholder="Destination" id="cars" [(ngModel)]="travelDetails.destination">
+            <option value="India">India</option>
+            <option value="Africa">Africa</option>
+            <option value="Europe">Europe</option>
+          </select>
+        </div>
+        <div class='row'>
+            <label for="noOfPersons">Number of Persons</label>
+            <input type="number" placeholder="Number of Persons" [(ngModel)]="travelDetails.noOfTravellers" name='noOfPersons' data-required="true" data-error-message="Number of Persons is required">
+          </div>
+          <div class='row'>
+            <label for="budget">Budget Per Person</label>
+            <input type="number" placeholder="Budget Per Person" [(ngModel)]="travelDetails.budget" name='budget' data-required="true" data-error-message="Budget is required">
+          </div>
+        <button class="submit-button" (click)="saveDetails()" [disabled]="travelDetails.name == '' || 
+        travelDetails.email == '' || travelDetails.destination == '' || travelDetails.noOfTravellers == 0 || 
+        travelDetails.budget == 0">Save Details</button>
+      </form>
+    </div>
+  </div>
